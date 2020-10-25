@@ -1,3 +1,5 @@
+//frequency counter pattern, O(n) complexity
+
 function same(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
