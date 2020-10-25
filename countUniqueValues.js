@@ -23,12 +23,11 @@ const countUniqueValues = (arr) => {
   }
 
   while (j < arr.length) {
-    if (arr[i] === arr[j]) {
-      j++;
-    } else if (arr[i] !== arr[j]) {
+    if (arr[i] !== arr[j]) {
       i++;
       arr[i] = arr[j];
     }
+    j++;
   }
   return i + 1;
 };
@@ -38,6 +37,6 @@ let arr = [];
 // arr = [1, 1, 1, 1, 1, 2]; //=> 2
 // arr = [1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]; //=> 7
 // arr = [-3, -2, -2, 1, 3]; //=> 4
-arr = []; //=> 0
+// arr = []; //=> 0
 
 console.log(countUniqueValues(arr));
