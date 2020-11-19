@@ -1,8 +1,12 @@
-Binary Search overview
-
+Binary Search overview:
 - is much faster form of search
 - rather than eliminating one element at a time, you can eliminate half of the remaining elemtns at a time
 - needs to an ordered array
 - divide and conquer
 
-Binary Search pseudocode
+Binary Search time complexity
+
+Best Case: O(1)
+Worst and average case: O(log n)
+- to add an extra "step" you could double the amount of indexes
+- very fast, second to O(1)
