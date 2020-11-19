@@ -1,0 +1,7 @@
+Linear Search Big O notes
+
+Best case: O(1)
+Worst case: O(n)
+Average case: O(n)
+
+Best wen can do with an unsorted set of data

@@ -1,0 +1,8 @@
+Binary Search overview
+
+- is much faster form of search
+- rather than eliminating one element at a time, you can eliminate half of the remaining elemtns at a time
+- needs to an ordered array
+- divide and conquer
+
+Binary Search pseudocode
