@@ -1,0 +1,35 @@
+Sorting
+
+What is sorting?
+Sorting is the process of rearranging the items in a collection(e.g. an array) so that the items are in some kind of order
+
+Examples:
+- Sorting numbers from smallest to largest
+- Sorting names alphabetically
+- Sorting movies based on release year
+- Sorting movies based on revenue
+
+Why do we need to learn this?
+- Sorting is an incredibly common task, so it's good to know how it works
+- There are many different ways to sort things, and different techniques have their own advantages and disadvantages
+
+Elementary sorting algorithms:
+- Bubble
+- Insertion
+- Selection
+
+Move advanced:
+- Merge
+- Quick
+- Radix
+- Shell
+- Heap
+
+Built-In JavaScript Method:
+- but it doesn't behave as expected
+- the default sort order is according to string Unicod code points
+- Accepts an optional comparator function to tell how you want it to sort
+- The comparator looks at pairs of elements (a and b), determines their sort order based on the return value
+    - If it returns a negative number, a should come before b
+    - If it returns a positive number, a should come after b, 
+    - If it returns 0, a and b are the same as far as the sort is concerned
