@@ -1,3 +1,5 @@
+// JavaScript built in method .sort()
+
 // arranges from smalles to largest, if returns a negative number
 function numberCompare1(num1, num2) {
   return num1 - num2;
