@@ -9,7 +9,7 @@
 
     Big- O complexity:
     - Worst case O(n^2) i.e. [4,3,2,1]
-    - Best Case, if our data is almost sorted i.e. [1,2,3,0]
+    - Best Case O(n) if data is almost sorted i.e. [1,2,3,0]
  */
 
 function insertionSort(arr) {
