@@ -65,7 +65,7 @@ var maxProfit = function (prices) {
   return profit;
 };
 
-const prices = [7, 1, 5, 3, 6cd, 4]; // 5
+const prices = [7, 1, 5, 3, 6, 4]; // 5
 // const prices = [1, 2, 3, 4, 5];      // 4
 // const prices = [7, 6, 4, 3, 1];      // 0
 console.log(maxProfit(prices));
