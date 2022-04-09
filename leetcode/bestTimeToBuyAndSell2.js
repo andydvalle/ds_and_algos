@@ -31,21 +31,41 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 */
 
-const maxProfit = (prices) => {
-  if (prices.length === 0 || prices.length === 1) return 0;
+var maxProfit = function (prices) {
+  // [7,1,5,3,6,4]
+  // given param number[] prices i.e. [1,2,3,4]
+  // buy on lowest day, find lowest number in the array
+  // sell on day that will give most profit, find largest different post index of lowest num
+  // 1 loop through number[] to find lowest number
+  // set that lowest number as the pointer
+  // if the lowest number is at the end of prices (if index number === prices.length-1) return 0
+  // 2 loop starting at index with lowest number
+  // var profit
+  // subtract the incremented index from lowest number and assign to var profit first time
+  // if next difference is greater than currence profit, replace with bigger difference
+
+  let lowestIndex = 0;
+  for (let i = 1; i < prices.length; i++) {
+    if (prices[i] < prices[lowestIndex]) {
+      lowestIndex = i;
+    }
+  }
+
+  if (lowestIndex === prices.length - 1) {
+    return 0;
+  }
 
   let profit = 0;
-
-  for (let i = 0; i < prices.length - 1; i++) {
-    if (prices[i] < prices[i + 1]) {
-      profit += prices[i + 1] - prices[i];
+  for (let i = lowestIndex; i < prices.length; i++) {
+    if (prices[i] - prices[lowestIndex] > profit) {
+      profit = prices[i] - prices[lowestIndex];
     }
   }
 
   return profit;
 };
 
-// const prices = [7, 1, 5, 3, 6, 4];
-const prices = [1, 2, 3, 4, 5];
-// const prices = [7, 6, 4, 3, 1];
+const prices = [7, 1, 5, 3, 6cd, 4]; // 5
+// const prices = [1, 2, 3, 4, 5];      // 4
+// const prices = [7, 6, 4, 3, 1];      // 0
 console.log(maxProfit(prices));
