@@ -34,35 +34,27 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 var maxProfit = function (prices) {
   // [7,1,5,3,6,4]
   // given param number[] prices i.e. [1,2,3,4]
-  // buy on lowest day, find lowest number in the array
-  // sell on day that will give most profit, find largest different post index of lowest num
-  // 1 loop through number[] to find lowest number
-  // set that lowest number as the pointer
-  // if the lowest number is at the end of prices (if index number === prices.length-1) return 0
-  // 2 loop starting at index with lowest number
-  // var profit
-  // subtract the incremented index from lowest number and assign to var profit first time
-  // if next difference is greater than currence profit, replace with bigger difference
+  // use sliding window solution with pointers left and right
+  // declare left at 0 and right at 1
+  // check if right is less than left;
+  // if right is less than left, then move left pointer to right position; this will slide the window and now left is start of window
+  // if right is greater than left, set profit to whichever is greater - current profit or new profit
+  // return profit
 
-  let lowestIndex = 0;
-  for (let i = 1; i < prices.length; i++) {
-    if (prices[i] < prices[lowestIndex]) {
-      lowestIndex = i;
-    }
+  // sliding window solution
+
+  let l = 0;
+  let r = 1;
+  let maxProfit = 0;
+
+  while (r < prices.length) {
+    if (prices[r] < prices[l]) l = r;
+    else maxProfit = Math.max(maxProfit, prices[r] - prices[l]);
+
+    r++;
   }
 
-  if (lowestIndex === prices.length - 1) {
-    return 0;
-  }
-
-  let profit = 0;
-  for (let i = lowestIndex; i < prices.length; i++) {
-    if (prices[i] - prices[lowestIndex] > profit) {
-      profit = prices[i] - prices[lowestIndex];
-    }
-  }
-
-  return profit;
+  return maxProfit;
 };
 
 const prices = [7, 1, 5, 3, 6, 4]; // 5
